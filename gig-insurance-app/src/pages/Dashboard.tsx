@@ -27,7 +27,7 @@ export default function Dashboard() {
           <span className="text-muted text-sm">Valid until Mar 24, 2026</span>
         </div>
 
-        <div className="glass-panel stat-card" style={{ border: '1px solid rgba(245, 158, 11, 0.3)' }}>
+        <div className="glass-panel stat-card" style={{ border: '1px solid rgba(59, 130, 246, 0.1)' }}>
           <span className="text-warning text-sm flex items-center gap-2"><AlertTriangle size={16} /> AI Risk Level (Mumbai)</span>
           <span className="stat-value text-warning" style={{ fontSize: '1.75rem' }}>Moderate</span>
           <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>20% chance of heavy rain tomorrow</span>
