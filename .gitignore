@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+.env
+.env.local
+.vscode/
+.idea/
+*.log
+interview_evaluator/backend/chroma_db/
+interview_evaluator/backend/evaluator.db
+interview_evaluator/frontend/node_modules/
+interview_evaluator/frontend/dist/

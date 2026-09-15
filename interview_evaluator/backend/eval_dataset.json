@@ -1,0 +1,66 @@
+[
+  {
+    "id": "eval-01",
+    "question_id": "ml-01",
+    "question_text": "What is overfitting in machine learning, how do you detect it, and what techniques can prevent it?",
+    "candidate_answer": "Overfitting occurs when a machine learning model memorizes the training data and noise rather than learning generalizable underlying patterns, representing high variance and low bias. The primary symptom is a significant generalization gap: the model achieves near-zero loss on training data, but performs poorly on unseen test data. During training, it is detected when training loss continues decreasing while validation loss begins to diverge and climb. To prevent overfitting, we use regularization like L1 Lasso (which induces sparsity) and L2 Ridge (which penalizes large weights). In deep learning, Dropout randomly deactivates neurons to reduce co-adaptation. We can also use Early Stopping based on validation loss patience, K-Fold Cross-Validation, and data augmentation to expand the training distribution.",
+    "human_score": 93.0,
+    "notes": "Excellent comprehensive answer covering definition, generalization gap, loss divergence, L1/L2 regularization, dropout, early stopping, and cross-validation."
+  },
+  {
+    "id": "eval-02",
+    "question_id": "ml-01",
+    "question_text": "What is overfitting in machine learning, how do you detect it, and what techniques can prevent it?",
+    "candidate_answer": "Overfitting is when a model is too complex. You can detect it if the model has high accuracy on training but worse accuracy on test data. To prevent it, you can use dropout in neural networks or gather more training data.",
+    "human_score": 62.0,
+    "notes": "Average answer. Mentions core concept and dropout, but lacks depth on loss curves, L1/L2 regularization, and mathematical nuances."
+  },
+  {
+    "id": "eval-03",
+    "question_id": "ml-01",
+    "question_text": "What is overfitting in machine learning, how do you detect it, and what techniques can prevent it?",
+    "candidate_answer": "Overfitting means the model has very high bias and doesn't fit the training data properly. If your model gets 100% training accuracy it means it is fully ready for production. You can fix it by adding as many polynomial features as possible so the model gets smarter.",
+    "human_score": 25.0,
+    "notes": "Severe misconceptions. Confuses overfitting with high bias, falsely claims 100% training accuracy guarantees readiness, and suggests adding more features."
+  },
+  {
+    "id": "eval-04",
+    "question_id": "ml-02",
+    "question_text": "Explain the difference between Precision and Recall. In what real-world scenarios would you prioritize one over the other?",
+    "candidate_answer": "Precision measures the fraction of positive predictions that are truly positive: TP / (TP + FP). Recall measures the fraction of actual positives captured: TP / (TP + FN). You prioritize Precision when false positives have severe consequences—for instance, an email spam filter, where sending a legitimate client contract to spam causes high operational harm. You prioritize Recall when false negatives are critical—such as in oncological diagnosis or cancer screening, where missing a diseased patient can be fatal. The F1-score provides the harmonic mean when balancing both.",
+    "human_score": 92.0,
+    "notes": "Exemplary answer with exact mathematical definitions, concrete domain scenarios (spam vs oncology), and F1 harmonic mean."
+  },
+  {
+    "id": "eval-05",
+    "question_id": "py-01",
+    "question_text": "How does Python manage memory, and how does the Generational Garbage Collector handle cyclic references?",
+    "candidate_answer": "Python manages memory by counting references. Every time you assign an object, reference count goes up. When you use del, it drops. If an object reaches zero references, it is deleted.",
+    "human_score": 55.0,
+    "notes": "Partially correct on reference counting, but completely fails to explain cyclic references, generational heuristics (Gen 0, 1, 2), or cycle detection algorithms."
+  },
+  {
+    "id": "eval-06",
+    "question_id": "py-02",
+    "question_text": "What are Python generators and the yield keyword, and why are they preferable to returning standard lists for large data pipelines?",
+    "candidate_answer": "Generators in Python use the yield statement to create lazy iterators. Instead of allocating memory for an entire collection upfront like a standard list (which requires O(N) memory), a generator evaluates values on the fly, maintaining O(1) space complexity. When a function yields, its local variable state and execution pointer are frozen in memory until next() is invoked. This makes generators essential when streaming multi-gigabyte log files, reading database cursors, or processing unbounded streams.",
+    "human_score": 94.0,
+    "notes": "Outstanding technical precision covering lazy evaluation, O(1) vs O(N) space complexity, state suspension, and streaming application."
+  },
+  {
+    "id": "eval-07",
+    "question_id": "db-01",
+    "question_text": "Explain the ACID properties of a relational database and how isolation levels mitigate concurrency anomalies.",
+    "candidate_answer": "ACID guarantees transactional reliability: Atomicity ensures all operations succeed or the entire transaction aborts; Consistency preserves database integrity constraints and schema invariants; Isolation ensures concurrent operations do not leak uncommitted state; Durability guarantees committed data survives crashes via Write-Ahead Logging. Concurrency phenomena include dirty reads, non-repeatable reads, and phantom reads. SQL isolation levels—Read Uncommitted, Read Committed, Repeatable Read, and Serializable—progressively prevent these anomalies using locking or MVCC snapshot isolation.",
+    "human_score": 91.0,
+    "notes": "Strong answer covering all 4 ACID pillars, 3 standard concurrency anomalies, and 4 isolation levels."
+  },
+  {
+    "id": "eval-08",
+    "question_id": "db-01",
+    "question_text": "Explain the ACID properties of a relational database and how isolation levels mitigate concurrency anomalies.",
+    "candidate_answer": "Computers have hard drives and CPUs. SQL is used to query data using SELECT and FROM. When building a web app with React, you often fetch JSON data from an API and show it in a table.",
+    "human_score": 15.0,
+    "notes": "Completely ungrounded and off-topic answer. Should trigger insufficient reference / zero technical match."
+  }
+]
